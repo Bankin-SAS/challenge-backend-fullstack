@@ -12,7 +12,7 @@ Each subdirectory (`challenge-backend` and `challenge-front`) contains its own `
 
 If you are blocked on the backend part of the challenge, you can use a mock of the expected result to proceed with the frontend challenge.
 
-**The expected duration for this exercise is of 2 hours.**
+**The expected duration for this exercise is of 3 hours.**
 
 ## Prerequisites
 The following software should be installed on your machine:
