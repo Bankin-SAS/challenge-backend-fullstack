@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bankin.challengebackend.services.BridgeService;
+import com.bankin.challengebackend.services.BankinService;
 
 /**
  * MyController.myEndpoint is called when requesting GET /mycontroller/myroute
@@ -21,11 +21,11 @@ import com.bankin.challengebackend.services.BridgeService;
 public class MyController {
 
     @Autowired
-    private BridgeService bridgeService;
+    private BankinService bankinService;
 
     @GetMapping("/myroute")
     public MyResponse myEndpoint() throws IOException {
-        bridgeService.doSomething();
+        bankinService.doSomething();
         return new MyResponse();
     }
 

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.bankin.challengebackend.clients.Authenticate;
 import com.bankin.challengebackend.clients.AuthenticateResponse;
 import com.bankin.challengebackend.clients.BridgeClient;
 import com.bankin.challengebackend.clients.GetAccountResponse;
@@ -17,7 +18,7 @@ import com.bankin.challengebackend.clients.GetAccountResponse;
  * The "doSomething" method doesn't actually do anything yet and needs to be modified to fit the exercice's needs.
  */
 @Component
-public class BridgeService {
+public class BankinService {
 
     // these are hardcoded for simplicity's sake
     private static final String USER_EMAIL = "user1@mail.com";
@@ -36,7 +37,10 @@ public class BridgeService {
      * is no trap)
      */
     private Optional<AuthenticateResponse> authenticateUser(String email, String password) throws IOException {
-        var response = bridgeClient.authenticate(version, deviceId, email, password).execute();
+        var object = new Authenticate();
+        object.email = email;
+        object.password = password;
+        var response = bridgeClient.authenticate(version, deviceId, object).execute();
         if (response.isSuccessful()) {
             return Optional.of(response.body());
         }

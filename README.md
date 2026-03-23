@@ -16,7 +16,7 @@ If you are blocked on the backend part of the challenge, you can use a mock of t
 
 ## Prerequisites
 The following software should be installed on your machine:
-* Java 11
+* Java 17
 * Node 15+ and NPM
 
 We highly recommend IntelliJ as your IDE.

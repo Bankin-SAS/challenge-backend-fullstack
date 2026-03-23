@@ -2,6 +2,7 @@ package com.bankin.challengebackend.clients;
 
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
@@ -12,8 +13,7 @@ public interface BridgeClient {
     @POST("/v2/authenticate")
     Call<AuthenticateResponse> authenticate(@Header("Bankin-Version") String version,
                                             @Header("Bankin-Device") String deviceId,
-                                            @Query(value = "email", encoded = true) String email,
-                                            @Query(value = "password", encoded = true) String password);
+                                            @Body Authenticate authenticate);
 
     @GET("/v2/changeme")
     Call<GetAccountResponse> getAccounts(@Header("Bankin-Version") String version,
