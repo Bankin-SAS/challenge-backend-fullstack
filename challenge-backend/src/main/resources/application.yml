@@ -1,5 +1,5 @@
 bridge.api:
   base-url: https://sync.bankin.com
   version: 2021.06.01
-  device-id:
+  device-id: 26ac2fb6-4b1f-4e7c-a35d-aaa40b5c00b6
  
